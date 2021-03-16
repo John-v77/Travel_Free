@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const Item = require('../models/Item')
 const User = require('../models/User')
+const Cart = require('../models/Cart')
 const axios = require('axios')
 const jwt = require('jsonwebtoken');
 const { query } = require('express');
@@ -88,6 +89,9 @@ router.get(`/findItem/:name`, async (req, res, next) => {
 
 router.get(`/ItemDetails`, async (req, res, next) => {
   console.log('My request **********', req.query.itemId)
+  let itemDet = await Item.find({_id: req.query.itemId})
+//   console.log('backEnd', itemDet)
+    res.status(200).json(itemDet)
 })
 
 

@@ -31,6 +31,9 @@ const actions = {
     addItem: async (item) => {
         return await axios.post(`${baseURL}/addAItem`, item , resetHead())
     },
+    addItemtoCart: async(item) =>{
+        return await axios.post(`${baseURL}/ShopAdd`, item, resetHead())
+    },
     // Added by John
     delItem: async (itemId) => {
         return await axios.delete(`${baseURL}/delete/${itemId}`, resetHead())

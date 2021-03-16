@@ -61,7 +61,7 @@ function Navbar(props) {
             
               <Link to="/shopingCart">
                 <button
-                  style={{ width: "3vw", height: "1.2vw", margin: "0 10px" }}
+                  style={{ width: "3vw", height: "1.8vw", margin: "0 10px" }}
                 >
                   <i
                     class="fa fa-shopping-cart"

@@ -1,45 +1,48 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import actions from '../api';
+import {CartContext} from './CartContext';
 import './ShoppingCart.css'
-// import {shoppingCart} from './storeFrontDesk';
+// import {shoppingCart} from './storeFrontDesk';   
 function ShopingCart(props) {
 
-    // const showItems =()=>{
+    const addToCart = (item) => {
+        actions.addItemtoCart(item)
+    }
+    const removeFromCart = () => {}
+
+    const showItems =()=>{
 
 
-    //     // props.ShopingCart
-    //     // let itemsToBuy = shoppingCart
-    //     return itemsToBuy.map(eachE => {
-    //         return(
-    //             <div className='ShopingCart'>
-    //                 <div className='Shopped-item-img'>
-    //                     {eachE.image_url}
-    //                 </div>
-    //                 <div>   {eachE.item}  </div>
-    //                 <div>   {eachE.price} </div>                 
-    //                 <div>   {eachE.qty} </div>
-    //                 <div>   Total:{eachE.price*eachE.qty}</div>
-    //             </div>
-    //         )
-    //     })
-    // }
+        // props.ShopingCart
+        let itemsToBuy = props.shoppingCart
+        return itemsToBuy.map(eachE => {
+            return(
+
+                <div className="check-out-items">
+                    <img src={eachE.image_url} alt='picture'/>
+                    <h5>{eachE.item}</h5>
+                    <p>{eachE.price}</p>
+                    <div style={{display:'flex'}}>
+                    <p>Qty: 3</p>
+                    {/* <button onClick={(e) => addToCart(eachE._id)} > + </button>
+                    <button onClick={(e) => removeFromCart(eachE)} > - </button> */}
+                    </div>
+                    <p>Total:{3*eachE.price}</p>
+
+                </div>
+                
+            )
+        })
+    }
 
     return (
         <div style={{display:'flex'}}>
-            <div className='shoppingcart' style={{border:"2px solid grey", width:'55vw', backgroundColor:'forestgreen'}}>
-                
-                <div>Shopping cart </div>
+            <div  className="ShoppingCart-main">
 
-                <div style={{display:'flex', justifyContent:'space-evenly',alignItems:'center',  width:'53vw',height:'7vh', margin:'1vw', backgroundColor:'white'}}>
-                <div style={{width:'6vh', height:'6vh', backgroundColor:'lightskyblue', margin:"0.5vh 2vw"}}></div>
-                <div><h5>Name</h5></div>
-                <div><h5>Price</h5></div>
-                <div><h5>Qty</h5></div>
-                <div><h5>total</h5></div>
-                <div><button>remove</button></div>
 
-                {/* {showItems()} */}
-                </div>
-            
+            {showItems()}
+
+       
             </div>
             <div style={{backgroundColor:'white',marginLeft:'1vw', width:'23vw', height:'60vh', border:'2px solid gainsboro'}}>
                     <div style={{ width:'23vw'}}>
@@ -50,6 +53,7 @@ function ShopingCart(props) {
 
         </div>
     );
+
 }
 
 export default ShopingCart;

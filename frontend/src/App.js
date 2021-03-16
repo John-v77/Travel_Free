@@ -4,6 +4,7 @@ import Home from './components/Home'
 import AddItem from './components/AddItem'
 import StoreFrontDesk from './components/storeFrontDesk'
 import ShopingCart from './components/ShopingCart'
+import {CartContext} from './components/CartContext'
 import NavBar from './components/navbar'
 import Auth from './components/Auth'
 import Search from './components/Search'
@@ -32,8 +33,19 @@ function App() {
 
   const history = useHistory()
 
+
+
+
+
+
+
+
+
+
   return (
+    
     <TheContext.Provider value={{ user, setUser, history }}>
+    {/* <CartContext> */}
 
        <NavBar setCosasInNavBar={setCosas} shoppingCartList={setShoppingCart}/>
     <div className="App">
@@ -49,20 +61,23 @@ function App() {
         <Link to="add-items"><b>Add Item</b></Link>
       </nav> */}
 
+      
+
 
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
-        <Route exact path="/storeFrontDesk" render={(props) => <StoreFrontDesk {...props} />} />
+        <Route exact path="/storeFrontDesk" render={(props) => <StoreFrontDesk {...props}  shoppingCart={shoppingCart} setShoppingCart={setShoppingCart}/>} />
         <Route exact path="/add-items" render={(props) => <AddItem {...props} />} />
         <Route exact path="/auth" render={(props) => <Auth setUser={setUser} {...props} />} />
         <Route exact path="/profile" render={(props) => <Profile {...props} />} />
         <Route exact path="/search" render={(props) => <Search MyItemsZZZZ={cosas} {...props} />} />
-        <Route exact path="/shopingCart" render={(props) => <ShopingCart shoppingCartList={shoppingCart} {...props} />} />
+        <Route exact path="/shopingCart" render={(props) => <ShopingCart shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} {...props} />} />
         <Route exact path="/ItemDetails/:id" render={(props) => <ItemDetails {...props} />} />
       </Switch>
 
     </div>
-   
+
+    {/* </CartContext> */}
     </TheContext.Provider>
   );
 }
