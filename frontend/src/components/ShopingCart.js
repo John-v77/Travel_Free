@@ -5,20 +5,18 @@ import './ShoppingCart.css'
 // import {shoppingCart} from './storeFrontDesk';   
 function ShopingCart(props) {
 
-    const addToCart = (item) => {
-        actions.addItemtoCart(item)
-    }
-    const removeFromCart = () => {}
+    // const addToCart = (item) => {
+    //     actions.addItemtoCart(item)
+    // }
+    // const removeFromCart = () => {}
 
     const showItems =()=>{
-
-
         // props.ShopingCart
         let itemsToBuy = props.shoppingCart
         return itemsToBuy.map(eachE => {
             return(
 
-                <div className="check-out-items">
+                <div className="check-out-items" key={eachE._id}>
                     <img src={eachE.image_url} alt='picture'/>
                     <h5>{eachE.item}</h5>
                     <p>{eachE.price}</p>
@@ -28,9 +26,7 @@ function ShopingCart(props) {
                     <button onClick={(e) => removeFromCart(eachE)} > - </button> */}
                     </div>
                     <p>Total:{3*eachE.price}</p>
-
                 </div>
-                
             )
         })
     }

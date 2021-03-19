@@ -27,7 +27,6 @@ useEffect(() => {
             newCart.push(item)
           props.setShoppingCart(newCart)
           console.log(props.shoppingCart)
-       
      }
 
 
@@ -47,11 +46,9 @@ useEffect(() => {
                             <img src={eachItem.image_url} alt="product picture"  style={{width:'15vw', height:'15vw', borderRadius:'6px'}}/>
                         </div>
                         <div>
-                            <ul style={{listStyleType:"none"}}>
-                                <li><Link to={`/ItemDetails/${eachItem._id}`}>{eachItem.item}</Link></li>
-                                <li>${eachItem.price}</li>
-                                <li>{eachItem.description}</li>
-                            </ul>
+                                <Link style={{color:'black'}} to={`/ItemDetails/${eachItem._id}`}><h3>{eachItem.item}</h3></Link>
+                                <h4>${eachItem.price}</h4>
+                                <p>{eachItem.description}</p>
                         </div>
                         
                         <div style={{marginBottom:'2vh',display:"flex", justifyContent:'flex-end'}}>
@@ -95,8 +92,9 @@ useEffect(() => {
     
 
     return (
-        <>
-            <div style={{float:'right'}}>
+        <div>
+            <h2>Hot deals !!</h2>
+            <div>
                 <button  onClick={(e) => sortItems(e)} className="Sort-btn-AllItems"><b>sort by price</b></button>
             </div>
             <div className="All-items-display">
@@ -117,7 +115,7 @@ useEffect(() => {
                 
             </div>
            
-        </>
+        </div>
     );
 }
 

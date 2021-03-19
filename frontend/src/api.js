@@ -48,7 +48,7 @@ const actions = {
     },
 
     searchItemById: async (itemId) => {
-        console.log(itemId)
+        // console.log(itemId)
         return await axios.get(`${baseURL}/ItemDetails?itemId=${itemId}`, resetHead())
     },
     // modifyId: async (item) => {
