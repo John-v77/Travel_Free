@@ -8,20 +8,22 @@ function Search(props) {
     const showItems = () => {
         return(
             props.MyItemsZZZZ.map(eachElement => {
-             return(   <div>
-                    {/* <div> {eachElement[image_url]}</div> */}
-                    <div> {eachElement.item}</div>
-                    {/* <div> {eachElement[price]}</div>
-                    <div> {eachElement[description]}</div> */}
-                </div>
-             )
-            })
+
+                return(
+                   <div className="search-item">
+                       <img src={eachElement.image_url} alt="product picture"  style={{width:'15vw', height:'15vw', borderRadius:'6px'}}/>
+                       <div> {eachElement.item}</div>
+                       <div> ${eachElement.price}</div>
+                       <div> {eachElement.description}</div>
+                   </div>
+                )
+               })
             
         )
     }
 
     return (
-        <div>
+        <div className="All-items-display">
             {showItems()}
         </div>
     );

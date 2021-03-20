@@ -72,7 +72,7 @@ function App() {
         <Route exact path="/profile" render={(props) => <Profile {...props} />} />
         <Route exact path="/search" render={(props) => <Search MyItemsZZZZ={cosas} {...props} />} />
         <Route exact path="/shopingCart" render={(props) => <ShopingCart shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} {...props} />} />
-        <Route exact path="/ItemDetails/:id" render={(props) => <ItemDetails {...props} />} />
+        <Route exact path="/ItemDetails/:id" render={(props) => <ItemDetails {...props}  shoppingCart={shoppingCart} setShoppingCart={setShoppingCart}/>} />
       </Switch>
 
     </div>
