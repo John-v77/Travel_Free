@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom'
 import actions from '../api'
-import './Allitems.css'
-import './Allitems-Mobile.css'
+import './storeFrontDesk.css'
+import './storeFrontDesk-Mobile.css'
 
 
 
@@ -51,7 +51,7 @@ useEffect(() => {
                                 <p>{eachItem.description}</p>
                         </div>
                         
-                        <div style={{marginBottom:'2vh',display:"flex", justifyContent:'flex-end'}}>
+                        <div className="all-items-btn-container" style={{marginBottom:'2vh',display:"flex", justifyContent:'flex-end'}}>
                             <button onClick={(e) => addItemToShopping(eachItem)} >buy</button>
                             {/* <button onClick={(e) => modifyItem(eachItem._id)} >modify</button> */}
                             <button onClick={(e) => deleteItem(eachItem._id)} className="del-Btn-StoreFront">delete</button>

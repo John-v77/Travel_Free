@@ -37,4 +37,32 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    min-height: 50vh;
+    min-width: 53vw;
+    border: 2px solid gainsboro;
+    margin-left: 1.4rem;
+
+}
+
+.check-out-final{
+    background-Color:'white';
+    margin-Left:1vw;
+    width:23vw;
+    height:60vh; 
+   border:2px solid gainsboro;
+   display:flex;
+   flex-direction: column;
+}
+
+.check-out-final h5{
+    padding-top: 15vh;
+    justify-self: center;
+    align-self: center;
+}
+
+.buy-btn-final{
+    padding: 0.5vh;
+    margin-left: 10rem;
+    position: absolute;
+    bottom:180px;
 }

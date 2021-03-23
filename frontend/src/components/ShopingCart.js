@@ -19,16 +19,21 @@ function ShopingCart(props) {
                 <div className="check-out-items" key={eachE._id}>
                     <img src={eachE.image_url} alt='picture'/>
                     <h5>{eachE.item}</h5>
-                    <p>{eachE.price}</p>
+                    <div style={{textJustify:'left'}}><p>${eachE.price}</p></div>
                     <div style={{display:'flex'}}>
-                    <p>Qty: 3</p>
+                    <p> Qty: 1 </p>
                     {/* <button onClick={(e) => addToCart(eachE._id)} > + </button>
                     <button onClick={(e) => removeFromCart(eachE)} > - </button> */}
                     </div>
-                    <p>Total:{3*eachE.price}</p>
+                    <p>Total:{1*eachE.price}</p>
                 </div>
             )
         })
+    }
+
+    const totalCost =()=>{
+        let itemsInShoppingCart = props.shoppingCart
+        return itemsInShoppingCart.reduce((acc, curr) => (curr.price, acc) ,0)
     }
 
     return (
@@ -39,12 +44,12 @@ function ShopingCart(props) {
             {showItems()}
 
        
-            </div>
-            <div style={{backgroundColor:'white',marginLeft:'1vw', width:'23vw', height:'60vh', border:'2px solid gainsboro'}}>
+            </div>  
+            <div className='check-out-final'>
                     <div style={{ width:'23vw'}}>
-                        <h5 style={{float:'right', marginRight:'1vw'}}>Grand Total: $1000</h5>                  
+                        <h5 className="positionCenter">Grand Total: ${totalCost()}</h5>                  
                     </div>
-                    <button style={{position:'absolute', bottom:'180px'}}>Proceed to check out</button>
+                    <button className="buy-btn-final">Proceed to check out</button>
             </div>
 
         </div>

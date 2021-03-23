@@ -17,7 +17,7 @@ router.get(`/user`, verifyToken, async (req, res, next) => {
             res.status(403).json(err);
         } else {
             User.findById(authData.user._id).then(user => {
-                console.log(user, '?!?!?!?')
+                // console.log(user, '?!?!?!?')
                 res.status(200).json(user)
             }).catch(err => res.status(500).json(err))
 
@@ -88,7 +88,7 @@ router.get(`/findItem/:name`, async (req, res, next) => {
 
 
 router.get(`/ItemDetails`, async (req, res, next) => {
-  console.log('My request **********', req.query.itemId)
+//   console.log('My request **********', req.query.itemId)
   let itemDet = await Item.find({_id: req.query.itemId})
 //   console.log('backEnd', itemDet)
     res.status(200).json(itemDet)
