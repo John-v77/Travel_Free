@@ -19,7 +19,7 @@ import TheContext from './TheContext'
 function App() {
 
   const [user, setUser] = useState({})
-  const [shoppingCart, setShoppingCart] = useState([])
+  const [shoppingCart, setShoppingCart] = useState({})
   const [cosas, setCosas] = useState([])
 
 

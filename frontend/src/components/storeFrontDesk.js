@@ -22,11 +22,30 @@ useEffect(() => {
 
  
      const addItemToShopping = (item)=> {
-        //   console.log('type of Sh**********',shoppingCart)
-        let newCart = [...props.shoppingCart]
-            newCart.push(item)
-          props.setShoppingCart(newCart)
-          console.log(props.shoppingCart)
+          console.log('type of Shopping**********', (typeof props.shoppingCart ), props.shoppingCart)
+          let newObject = props.shoppingCart
+        //   console.log(item._id, item)
+
+        //If items id is not a key in the object creates a key with the properties of that item 
+        if (!(item._id in newObject)){
+            newObject[item._id] = {description:item.description, 
+                                            image_url:item.image_url,
+                                            name:item.item,
+                                            price:item.price,
+                                            qty:1}
+
+        //if the key exist the product is already there and it updates the quantity. 
+        }else{
+            newObject[item._id].qty++
+        }
+
+        props.setShoppingCart(newObject)
+
+        console.log('State of Shopping**********', props.shoppingCart)
+        // let newCart = [...props.shoppingCart]
+        //     newCart.push(item)
+        //   props.setShoppingCart(newCart)
+        //   console.log(props.shoppingCart)
      }
 
 
