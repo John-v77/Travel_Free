@@ -22,9 +22,7 @@ useEffect(() => {
 
  
      const addItemToShopping = (item)=> {
-          console.log('type of Shopping**********', (typeof props.shoppingCart ), props.shoppingCart)
           let newObject = props.shoppingCart
-        //   console.log(item._id, item)
 
         //If items id is not a key in the object creates a key with the properties of that item 
         if (!(item._id in newObject)){
@@ -41,7 +39,6 @@ useEffect(() => {
 
         props.setShoppingCart(newObject)
 
-        console.log('State of Shopping**********', props.shoppingCart)
         // let newCart = [...props.shoppingCart]
         //     newCart.push(item)
         //   props.setShoppingCart(newCart)

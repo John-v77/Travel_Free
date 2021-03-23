@@ -3,7 +3,7 @@ import React from 'react';
 
 function Search(props) {
 
-    console.log(props.MyItemsZZZZ)
+    // console.log(props.MyItemsZZZZ)
 
     const showItems = () => {
         return(
