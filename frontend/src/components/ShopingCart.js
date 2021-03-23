@@ -13,9 +13,10 @@ function ShopingCart(props) {
     const showItems =()=>{
         // props.ShopingCart
         let itemsToBuy = props.shoppingCart
-        console.log(itemsToBuy)
+        let len = Object.keys(itemsToBuy).length === 0;
+        console.log('items to buy', len)
 
-     return  Object.keys(itemsToBuy).map((each, i) =>{
+     return len ? 'Shopping Cart is Empty' : Object.keys(itemsToBuy).map((each, i) =>{
 
             return(
                 <div className="check-out-items" key={each}>
@@ -70,6 +71,22 @@ function ShopingCart(props) {
         // })
     }
 
+
+
+    const showCheckOut =()=>{
+
+        let totalItems = props.shoppingCart
+
+        // const grandTotal = totalItems.reduce((acc, person) => acc + (person.price * person.qty, 0))
+        return (
+            <div className='check-out-final'>
+                    <div style={{ width:'23vw'}}>
+                        <h5 className="positionCenter">Grand Total: ${0}</h5>                  
+                    </div>
+                    <button className="buy-btn-final">Proceed to check out</button>
+            </div>
+            )
+    } 
     // const totalCost =()=>{
     //     let itemsInShoppingCart = props.shoppingCart
     //     return itemsInShoppingCart.reduce((acc, curr) => (curr.price, acc) ,0)
@@ -84,12 +101,8 @@ function ShopingCart(props) {
 
        
             </div>  
-            <div className='check-out-final'>
-                    <div style={{ width:'23vw'}}>
-                        <h5 className="positionCenter">Grand Total: ${}</h5>                  
-                    </div>
-                    <button className="buy-btn-final">Proceed to check out</button>
-            </div>
+            
+            {showCheckOut()}
 
         </div>
     );
