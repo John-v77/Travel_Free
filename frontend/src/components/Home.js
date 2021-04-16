@@ -14,7 +14,7 @@ function Home(props) {
 
     return (
         <>
-            <h2>Here are a few of the gently-used items you can find on WhyNew!</h2>
+            <h2>Check out some of the gently-used items you can find on WhyNew!</h2>
             <Slider {...settings}>
       <div >
         <img className= 'apple' src = './Images/iphone range.jpg' alt= 'apple'/>

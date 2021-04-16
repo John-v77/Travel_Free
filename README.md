@@ -1,4 +1,4 @@
-![EliteLogo](https://user-images.githubusercontent.com/76506368/109726771-45624d80-7b81-11eb-86e9-f93a0b35a413.jpg)
+
 
 
 Stelian G., Rafael R. & John V. aka "The Elite" bring you: WhyNew!

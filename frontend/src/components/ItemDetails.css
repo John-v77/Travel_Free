@@ -1,8 +1,9 @@
 .Single-item-details{
     width: 28vw;
-    padding-top: 10vh;
-    margin:0 15vw;
-    min-width: 100vh;
+    padding: 2rem 1rem;
+    margin:0 24vw;
+    min-height: 80vh;
+
     border: 2px solid gainsboro;
     border-radius: 6px;
     display: flex;
@@ -10,6 +11,20 @@
     align-items: center;
 }
 
+<<<<<<< HEAD
 .Single-item-details div{
     margin: 0;
 }
+=======
+.Single-item-details img{
+   width:28vw;
+   height:27vw;
+   border-radius: 2px;
+}
+
+.Single-item-details h2{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+
+>>>>>>> aa34240781abde528572458e57fa5387d45f10ad

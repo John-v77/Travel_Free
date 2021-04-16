@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom'
 import actions from '../api'
-import './Allitems.css'
-import './Allitems-Mobile.css'
+import './storeFrontDesk.css'
+import './storeFrontDesk-Mobile.css'
 
 
 
@@ -22,10 +22,34 @@ useEffect(() => {
 
  
      const addItemToShopping = (item)=> {
+<<<<<<< HEAD
         //   console.log('type of Sh**********',shoppingCart)
           props.setShoppingCart([...props.shoppingCart, item])
           console.log(props.shoppingCart)
        
+=======
+          let newObject = props.shoppingCart
+
+        //If items id is not a key in the object creates a key with the properties of that item 
+        if (!(item._id in newObject)){
+            newObject[item._id] = {description:item.description, 
+                                            image_url:item.image_url,
+                                            name:item.item,
+                                            price:item.price,
+                                            qty:1}
+
+        //if the key exist the product is already there and it updates the quantity. 
+        }else{
+            newObject[item._id].qty++
+        }
+
+        props.setShoppingCart(newObject)
+
+        // let newCart = [...props.shoppingCart]
+        //     newCart.push(item)
+        //   props.setShoppingCart(newCart)
+        //   console.log(props.shoppingCart)
+>>>>>>> aa34240781abde528572458e57fa5387d45f10ad
      }
 
 
@@ -45,14 +69,12 @@ useEffect(() => {
                             <img src={eachItem.image_url} alt="product picture"  style={{width:'15vw', height:'15vw', borderRadius:'6px'}}/>
                         </div>
                         <div>
-                            <ul style={{listStyleType:"none"}}>
-                                <li><Link to={`/ItemDetails/${eachItem._id}`}>{eachItem.item}</Link></li>
-                                <li>${eachItem.price}</li>
-                                <li>{eachItem.description}</li>
-                            </ul>
+                                <Link style={{color:'black'}} to={`/ItemDetails/${eachItem._id}`}><h3>{eachItem.item}</h3></Link>
+                                <h4>${eachItem.price}</h4>
+                                <p>{eachItem.description}</p>
                         </div>
                         
-                        <div style={{marginBottom:'2vh',display:"flex", justifyContent:'flex-end'}}>
+                        <div className="all-items-btn-container" style={{marginBottom:'2vh',display:"flex", justifyContent:'flex-end'}}>
                             <button onClick={(e) => addItemToShopping(eachItem)} >buy</button>
                             {/* <button onClick={(e) => modifyItem(eachItem._id)} >modify</button> */}
                             <button onClick={(e) => deleteItem(eachItem._id)} className="del-Btn-StoreFront">delete</button>
@@ -93,8 +115,9 @@ useEffect(() => {
     
 
     return (
-        <>
-            <div style={{float:'right'}}>
+        <div>
+            <h2>Hot deals !!</h2>
+            <div>
                 <button  onClick={(e) => sortItems(e)} className="Sort-btn-AllItems"><b>sort by price</b></button>
             </div>
             <div className="All-items-display">
@@ -115,7 +138,7 @@ useEffect(() => {
                 
             </div>
            
-        </>
+        </div>
     );
 }
 

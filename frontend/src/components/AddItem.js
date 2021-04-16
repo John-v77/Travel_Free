@@ -19,7 +19,7 @@ function AddItem(props) {
             .then(newItem => {
                 console.log('new item!', newItem)  // reports a succesful process -- as "new Item!" added
                 //Redirect to all-items page
-                props.history.push(`all-items`)
+                props.history.push(`storeFrontDesk`)
             }).catch(console.error)
     }
 
