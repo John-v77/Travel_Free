@@ -18,21 +18,6 @@ function ItemDetails(props) {
                                         // console.log('final Item', item)
     }, [])
 
-<<<<<<< HEAD
-    
-
-    // console.log('Prams ***********', props.match.params)
-
-    console.log('after', item)
-
-    return (
-        <div className="Single-item-details">
-                <img src={item.image_url} style={{width:"28vw", height:'55vh'}}/>
-                <div><h1>{item.item}</h1></div> 
-                <div><h2>{item.price}</h2></div> 
-                <div style={{width:"28vw"}}><p>{item.description}</p></div> 
-                <div><button>buy</button></div>
-=======
     // console.log('final Item', item)
     const addItemToShopping = (item)=> {
         //   console.log('type of Sh**********',shoppingCart)
@@ -51,7 +36,6 @@ function ItemDetails(props) {
                 <div style={{width:"28vw"}}><p>{item.description}</p></div> 
                 <button style={{padding:'0 1rem'}} onClick={(e) => addItemToShopping(item)} >buy</button>
             </div>
->>>>>>> aa34240781abde528572458e57fa5387d45f10ad
         </div>
     );
 }

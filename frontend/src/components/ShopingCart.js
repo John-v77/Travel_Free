@@ -5,40 +5,18 @@ import './ShoppingCart.css'
 // import {shoppingCart} from './storeFrontDesk';   
 function ShopingCart(props) {
 
-<<<<<<< HEAD
-=======
     // const addToCart = (item) => {
     //     actions.addItemtoCart(item)
     // }
     // const removeFromCart = () => {}
 
->>>>>>> aa34240781abde528572458e57fa5387d45f10ad
     const showItems =()=>{
         // props.ShopingCart
-<<<<<<< HEAD
-        const itemsToBuy = props.shoppingCart
-        console.log(props.shoppingCart, '**********')
-        const grandTotal = itemsToBuy.reduce((acc, cur) => acc+cur.price,0)
-        return itemsToBuy.map(eachE => {
-            return(
-
-                <div className="check-out-items" key={eachE._id}>
-                    <div><img src={eachE.image_url} alt='picture'/></div>
-                    <div><h5>{eachE.item}</h5></div>
-                    <div><p>${eachE.price}</p></div>
-                    <div style={{display:'flex'}}>
-                    <div><p>Qty: 1</p></div>
-                    {/* <button onClick={(e) => addToCart(eachE._id)} > + </button>
-                    <button onClick={(e) => removeFromCart(eachE)} > - </button> */}
-                    </div>
-                    <p>Total:{eachE.qty*eachE.price}</p>
-=======
         let itemsToBuy = props.shoppingCart
         let len = Object.keys(itemsToBuy).length === 0;
-        console.log('items to buy', len)
+        // console.log('items to buy', len)
 
      return len ? 'Shopping Cart is Empty' : Object.keys(itemsToBuy).map((each, i) =>{
->>>>>>> aa34240781abde528572458e57fa5387d45f10ad
 
             return(
                 <div className="check-out-items" key={each}>
@@ -98,12 +76,16 @@ function ShopingCart(props) {
     const showCheckOut =()=>{
 
         let totalItems = props.shoppingCart
+        let grandTotal = 0
 
-        // const grandTotal = totalItems.reduce((acc, person) => acc + (person.price * person.qty, 0))
+        for(let i in totalItems){
+             grandTotal += (totalItems[i].qty * totalItems[i].price)
+            }
+
         return (
             <div className='check-out-final'>
                     <div style={{ width:'23vw'}}>
-                        <h5 className="positionCenter">Grand Total: ${0}</h5>                  
+                        <h5 className="positionCenter">Grand Total: ${grandTotal}</h5>                  
                     </div>
                     <button className="buy-btn-final">Proceed to check out</button>
             </div>
