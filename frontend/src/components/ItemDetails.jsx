@@ -16,26 +16,20 @@ function ItemDetails(props) {
         }).catch(console.error)
     }, [])
 
-
-    const showItems = () =>{
-        return item.map(each => {
-            return(
-
-            <div className="Single-item-details" key={each._id}>
-                <img src={each.image_url} style={{width:"28vw", height:'55vh'}}/>
-                <div><h1>Iphone</h1></div> 
-                <div><h2>{each.price}</h2></div> 
-                <div style={{width:"28vw"}}><p>{each.description}</p></div> 
-                <div><button>buy</button></div>
-            </div>
-            )
-        })}
+    
 
     // console.log('Prams ***********', props.match.params)
+
+    console.log('after', item)
+
     return (
-        <>
-        {/* {showItems()} */}
-        </>
+        <div className="Single-item-details">
+                <img src={item.image_url} style={{width:"28vw", height:'55vh'}}/>
+                <div><h1>{item.item}</h1></div> 
+                <div><h2>{item.price}</h2></div> 
+                <div style={{width:"28vw"}}><p>{item.description}</p></div> 
+                <div><button>buy</button></div>
+        </div>
     );
 }
 

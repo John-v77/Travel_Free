@@ -33,6 +33,10 @@
 }
 
 
+.check-out-items div{
+    width: 10vw;
+}
+
 .ShoppingCart-main{
     display: flex;
     flex-direction: column;

@@ -23,9 +23,7 @@ useEffect(() => {
  
      const addItemToShopping = (item)=> {
         //   console.log('type of Sh**********',shoppingCart)
-        let newCart = [...props.shoppingCart]
-            newCart.push(item)
-          props.setShoppingCart(newCart)
+          props.setShoppingCart([...props.shoppingCart, item])
           console.log(props.shoppingCart)
        
      }

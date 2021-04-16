@@ -10,4 +10,6 @@
     align-items: center;
 }
 
-
+.Single-item-details div{
+    margin: 0;
+}

@@ -5,29 +5,26 @@ import './ShoppingCart.css'
 // import {shoppingCart} from './storeFrontDesk';   
 function ShopingCart(props) {
 
-    const addToCart = (item) => {
-        actions.addItemtoCart(item)
-    }
-    const removeFromCart = () => {}
-
     const showItems =()=>{
 
 
         // props.ShopingCart
-        let itemsToBuy = props.shoppingCart
+        const itemsToBuy = props.shoppingCart
+        console.log(props.shoppingCart, '**********')
+        const grandTotal = itemsToBuy.reduce((acc, cur) => acc+cur.price,0)
         return itemsToBuy.map(eachE => {
             return(
 
-                <div className="check-out-items">
-                    <img src={eachE.image_url} alt='picture'/>
-                    <h5>{eachE.item}</h5>
-                    <p>{eachE.price}</p>
+                <div className="check-out-items" key={eachE._id}>
+                    <div><img src={eachE.image_url} alt='picture'/></div>
+                    <div><h5>{eachE.item}</h5></div>
+                    <div><p>${eachE.price}</p></div>
                     <div style={{display:'flex'}}>
-                    <p>Qty: 3</p>
+                    <div><p>Qty: 1</p></div>
                     {/* <button onClick={(e) => addToCart(eachE._id)} > + </button>
                     <button onClick={(e) => removeFromCart(eachE)} > - </button> */}
                     </div>
-                    <p>Total:{3*eachE.price}</p>
+                    <p>Total:{eachE.qty*eachE.price}</p>
 
                 </div>
                 
