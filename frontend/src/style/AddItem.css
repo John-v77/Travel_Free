@@ -1,30 +1,30 @@
 .AddForm {
     display:flex;
     flex-direction: column;
-     justify-content:center; 
-     width:55vw;
-      margin:8vh 10vw;
+    justify-content:center; 
+    width:30vw;
+    margin:8vh 21.5vw;
     border-radius:6px; 
-    border:2px solid #AAAFAA;
-       background-color:#B5E2F1; 
-       padding:3vw
+    border:2px solid #e7e5e5;
+    background-color:white; 
+    padding:3vw
 }
 .AddForm input{
 
-border: 2px solid rgb(143, 143, 151);
-padding: 2px;
-margin: 3px
+border: 2px solid #e7e5e5;
+border-radius: 3px;
+/* padding: 2px; */
+margin: 2vh
 }
 
 .buttonadditem{
-    margin: 0 20px 0 35px;
-    width: 16vw;
+    width: 10vw;
     height: 26px;
     background-color: white;
     border: 2px solid #308EFD;
     color:#308EFD;
     border-radius: 7px;
-    margin: 20px 0 10px;
+    margin:3vh 9.5vw;
     
    
 }

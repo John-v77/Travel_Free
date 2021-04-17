@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import actions from '../api'
 import './navbar.css';
-import './AddItem.css'
+import '../style/AddItem.css'
 
 function AddItem(props) {
 
